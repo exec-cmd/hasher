@@ -5,8 +5,8 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
-	"testing"
 	"reflect"
+	"testing"
 
 	"github.com/exec-cmd/hasher/internal/filehash"
 )
