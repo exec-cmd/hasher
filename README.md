@@ -1,32 +1,34 @@
 # hasher
 
-## О проекте
+Russian version: [README_RU.md](README_RU.md)
 
-`hasher` - небольшая консольная утилита на Go для вычисления хеша файла.
+## About
 
-Поддерживаемые алгоритмы:
+`hasher` is a small Go command-line utility for calculating file hashes.
 
-- `sha256` - используется по умолчанию;
+Supported algorithms:
+
+- `sha256` - used by default;
 - `sha512`;
-- `md5` - для совместимости и контрольных сумм, не для защиты данных.
+- `md5` - for compatibility and checksums, not for data protection.
 
-Результат выводится в виде строки из шестнадцатеричных символов в нижнем регистре.
+The result is printed as a lowercase hexadecimal string.
 
-## Установка
+## Installation
 
-Скачайте подходящий исполняемый файл со страницы [Releases](https://github.com/exec-cmd/hasher/releases) и добавьте его в каталог, доступный через `PATH`.
+Download the appropriate executable from the [Releases](https://github.com/exec-cmd/hasher/releases) page and place it in a directory included in your `PATH`.
 
-В Linux и macOS после скачивания может потребоваться выдать файлу права на запуск:
+On Linux and macOS, you may need to make the file executable after downloading it:
 
 ```sh
 chmod +x hasher
 ```
 
-### Сборка из исходников
+### Building from source
 
-Для сборки требуется Go `1.26.5` или новее.
+Go `1.26.5` or newer is required to build the project.
 
-Склонируйте репозиторий и соберите бинарный файл:
+Clone the repository and build the binary:
 
 ```sh
 git clone https://github.com/exec-cmd/hasher.git
@@ -34,24 +36,24 @@ cd hasher
 go build -o hasher ./cmd/hasher
 ```
 
-После сборки бинарный файл будет доступен в текущем каталоге.
+The binary will be available in the current directory after the build.
 
-## Использование
+## Usage
 
-Хеш файла алгоритмом `sha256`:
+Hash a file with `sha256`:
 
 ```sh
 ./hasher hash path/to/file
 ```
 
-Выбрать алгоритм можно через `--alg` или сокращённый флаг `-a`:
+Select an algorithm with `--alg` or its short form, `-a`:
 
 ```sh
 ./hasher hash --alg sha512 path/to/file
 ./hasher hash -a md5 path/to/file
 ```
 
-Справка:
+Display help:
 
 ```sh
 ./hasher --help
